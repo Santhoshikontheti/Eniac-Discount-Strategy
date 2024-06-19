@@ -1,0 +1,74 @@
+
+# Assuming APP1970_qty and APP1970_discount are your dataframes with the relevant data.
+# Ensure that 'week' is a numeric and no duplicates are present.
+APP1970_qty['week'] = pd.to_numeric(APP1970_qty['week'], errors='coerce')
+APP1970_discount['week'] = pd.to_numeric(APP1970_discount['week'], errors='coerce')
+
+# Remove NaN values that could result from conversion errors
+APP1970_qty.dropna(subset=['week','product_quantity'], 
+                  inplace=True)
+APP1970_discount.dropna(subset=['week', 'discountpct'], 
+                        inplace=True)
+
+# Remove duplicates
+APP1970_qty = APP1970_qty.drop_duplicates(subset='week')
+APP1970_discount = APP1970_discount.drop_duplicates(subset='week')
+
+# Sorting by 'week' to ensure the correct order
+APP1970_qty.sort_values('week', 
+                        inplace=True)
+APP1970_discount.sort_values('week', 
+                             inplace=True)
+
+# Function to perform spline interpolation
+def spline_interpolate(df, x_col, y_col, kind='cubic'):
+    x = df[x_col].astype(float)
+    y = df[y_col].astype(float)
+    # Create a spline interpolation of the data
+    spline = interp1d(x, 
+                      y, 
+                      kind=kind, 
+                      fill_value='extrapolate')
+    # Generate more x values
+    xnew = np.linspace(x.min(), x.max(), 300)
+    # Generate smoothed y values
+    ynew = spline(xnew)
+    return xnew, ynew
+
+# Interpolate data for smooth curves
+xnew_qty, ynew_qty = spline_interpolate(APP1970_qty, 
+                                        'week', 
+                                        'product_quantity')
+xnew_discount, ynew_discount = spline_interpolate(APP1970_discount, 
+                                                  'week', 
+                                                  'discountpct')
+
+# Plotting
+fig, ax1 = plt.subplots(figsize=(5,3))
+
+# First axis plot with spline interpolated data
+ax1.plot(xnew_qty, 
+         ynew_qty, 
+         label="APP1970 sold",
+         color="crimson")
+#ax1.scatter(APP1970_qty['week'], APP1970_qty['product_quantity'], color='blue')  # Original data points
+ax1.set_ylabel('Quantity of sold products')
+
+# Second axis with spline interpolated data
+ax2 = ax1.twinx()
+ax2.plot(xnew_discount, 
+         ynew_discount, 
+         label="Discount %", 
+         color="black")
+#ax2.scatter(APP1970_discount['week'], APP1970_discount['discountpct'], color='black')  # Original data points
+ax2.set_ylabel("Discount Percentage (%)")
+
+# Create legend
+lines, labels = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax1.legend(lines + lines2, 
+           labels + labels2, 
+           loc='center left', 
+           title='Legend')
+plt.savefig('my_graph.png', dpi=300, format='png')
+#files.download('my_graph.png')
