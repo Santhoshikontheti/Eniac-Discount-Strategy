@@ -12,6 +12,14 @@ The company wants to finally settle an ongoing debate: whether or not it’s ben
 The Marketing Team Lead is convinced that offering discounts is beneficial in the long run. She believes discounts improve customer acquisition, satisfaction and retention, and allow the company to grow.
 The main investors in the Board are worried about offering aggressive discounts. They have pointed out how the company’s recent quarterly results showed an increase in orders placed, but a decrease in the total revenue. They prefer that the company positions itself in the quality segment, rather than competing to offer the lowest prices in the market.
 
+## Key Considerations :
+1.Do aggressive discounts create noticeable higher sales?
+2.Is effectiveness of discounts correlated to specific product categories?
+3.Is Revenue decreasing due to misplaced discount?
+4.Does refined discount strategy can effectively drive increased revenue?
+
+
+
 ## Work steps
 ### Data preparation (data_preparation.ipynb)
 
