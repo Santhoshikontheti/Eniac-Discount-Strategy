@@ -1,6 +1,6 @@
 # Eniac-Discount-Strategy
 
-Data analysis for a Spanish online marketplace company. Created by Philip Groß, January 2024
+Data analysis for a Spanish online marketplace company.
 
 ## Eniac
 
@@ -108,10 +108,16 @@ brands.csv
 
     short – the 3-character code by which the brand can be identified in the first 3 characters of products.sku
     long – brand name
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Aggressive discounts hinder number of sales 
+
+
+
 ![image](https://github.com/user-attachments/assets/f126fc86-1d0c-479f-864a-b186b00fcca0)
+
+
 
 
 Potential revenue increases by tuning the discounts .
@@ -120,9 +126,11 @@ Potential revenue increases by tuning the discounts .
 
 
 Final recommendstions are 
---> Aggressive discounts don’t work!
---> Low to Mid discounts can increase sales &potentially better attract new customers.
---> Top-selling products sell regardless of discounts!
+
+
+--> Aggressive discounts don’t work.
+--> Low to Mid discounts can increase sales and potentially better attract new customers.
+--> Top-selling products sell regardless of discounts.
 
 
 
