@@ -9,8 +9,8 @@ Discounts strategy
 
 The company wants to finally settle an ongoing debate: whether or not it’s beneficial to discount products.
 
-    The Marketing Team Lead is convinced that offering discounts is beneficial in the long run. She believes discounts improve customer acquisition, satisfaction and retention, and allow the company to grow.
-    The main investors in the Board are worried about offering aggressive discounts. They have pointed out how the company’s recent quarterly results showed an increase in orders placed, but a decrease in the total revenue. They prefer that the company positions itself in the quality segment, rather than competing to offer the lowest prices in the market.
+The Marketing Team Lead is convinced that offering discounts is beneficial in the long run. She believes discounts improve customer acquisition, satisfaction and retention, and allow the company to grow.
+The main investors in the Board are worried about offering aggressive discounts. They have pointed out how the company’s recent quarterly results showed an increase in orders placed, but a decrease in the total revenue. They prefer that the company positions itself in the quality segment, rather than competing to offer the lowest prices in the market.
 
 ## Work steps
 ### Data preparation (data_preparation.ipynb)
@@ -100,4 +100,23 @@ brands.csv
 
     short – the 3-character code by which the brand can be identified in the first 3 characters of products.sku
     long – brand name
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Aggressive discounts hinder number of sales 
+![image](https://github.com/user-attachments/assets/f126fc86-1d0c-479f-864a-b186b00fcca0)
+
+
+Potential revenue increases by tuning the discounts .
+
+![image](https://github.com/user-attachments/assets/68b385a2-1ec2-4ed8-904d-24c46dc43a30)
+
+
+Final recommendstions are 
+--> Aggressive discounts don’t work!
+--> Low to Mid discounts can increase sales &potentially better attract new customers.
+--> Top-selling products sell regardless of discounts!
+
+
+
+
 
